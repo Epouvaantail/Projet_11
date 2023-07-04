@@ -21,6 +21,8 @@ body {
   background-color: #12002b;
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .sr-only {
@@ -165,6 +167,7 @@ body {
   border-color: #00bc77;
   background-color: #00bc77;
   color: #fff;
+  text-decoration: underline;
 }
 
 .sign-in-content {
@@ -172,7 +175,7 @@ body {
   background-color: white;
   width: 300px;
   margin-top: 50px;
-  margin-bottom: 200px;
+  margin-bottom: 150px;
   padding: 2rem;
 }
 
