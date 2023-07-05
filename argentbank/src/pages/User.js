@@ -56,22 +56,3 @@ const User = () => {
 };
 
 export default User;
-
-function getCurrentURL () {
-  return window.location.href
-};
-
-const url = getCurrentURL()
-if (url === "http://localhost:3000/user") {
-  console.log("User page loaded successfully!")
-  document.querySelector(".main-nav").insertAdjacentHTML('afterbegin', `
-  <a class="main-nav-item" href="./user.html">
-    <i class="fa fa-user-circle"></i>
-    Tony
-  </a>
-  <a class="main-nav-item" href="./index.html">
-    <i class="fa fa-sign-out"></i>
-    Sign Out
-  </a>
-  `)
-}
