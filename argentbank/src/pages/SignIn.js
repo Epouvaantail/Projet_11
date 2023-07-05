@@ -17,7 +17,7 @@ const SignIn = () => {
             ><input type="password" id="password" />
           </div>
           <div className="input-remember">
-            <input type="checkbox" id="remember-me" /><label for="remember-me"
+            <input type="checkbox" id="remember-me" /><label htmlFor="remember-me"
               >Remember me</label
             >
           </div>
