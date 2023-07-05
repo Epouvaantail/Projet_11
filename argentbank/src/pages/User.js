@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "../components/button";
 
 const User = () => {
   return (
@@ -15,7 +16,11 @@ const User = () => {
           <p class="account-amount-description">Available Balance</p>
         </div>
         <div class="account-content-wrapper cta">
-          <button class="transaction-button">View transactions</button>
+          <Button 
+          state={{
+            title:"View transactions"
+          }}
+          />
         </div>
       </section>
       <section class="account">
@@ -25,7 +30,11 @@ const User = () => {
           <p class="account-amount-description">Available Balance</p>
         </div>
         <div class="account-content-wrapper cta">
-          <button class="transaction-button">View transactions</button>
+        <Button 
+          state={{
+            title:"View transactions"
+          }}
+          />
         </div>
       </section>
       <section class="account">
@@ -35,7 +44,11 @@ const User = () => {
           <p class="account-amount-description">Current Balance</p>
         </div>
         <div class="account-content-wrapper cta">
-          <button class="transaction-button">View transactions</button>
+        <Button 
+          state={{
+            title:"View transactions"
+          }}
+          />
         </div>
       </section>
     </main>
