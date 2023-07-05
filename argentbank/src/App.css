@@ -49,6 +49,9 @@ body {
 .main-nav a {
   font-weight: bold;
   color: #2c3e50;
+  display: flex;
+  gap: 5px;
+  align-items: baseline;
 }
 
 .main-nav a.router-link-exact-active {
