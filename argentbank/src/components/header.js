@@ -10,18 +10,6 @@ function getCurrentURL () {
 const url = getCurrentURL()
 if (url === "http://localhost:3000/user") {
   console.log("User page loaded successfully!")
-  const bleu = document.querySelector(".main-nav")
-  console.log(bleu)
-  // .insertAdjacentHTML('afterbegin', `
-  // <a class="main-nav-item" href="./user.html">
-  //   <i class="fa fa-user-circle"></i>
-  //   Tony
-  // </a>
-  // <a class="main-nav-item" href="./index.html">
-  //   <i class="fa fa-sign-out"></i>
-  //   Sign Out
-  // </a>
-  // `)
 }
 
 const Header = () => {
