@@ -17,14 +17,14 @@ const Home = () => {
             <h2 className="sr-only">Features</h2>
             <Feature
             state={{
-              source:"/static/media/icon-chat.e238539d82b5a5f63c33.png",
+              source:require("../img/icon-chat.png"),
               alt:"chat-icon",
               title:"You are our #1 priority",
               description:"Need to talk to a representative? You can get in touch through our 24/7 chat or through a phone call in less than 5 minutes."
             }} 
             />
             <Feature state={{
-              source:"/static/media/icon-money.8ec88bb1a5070fd6513a.png",
+              source:require("../img/icon-money.png"),
               alt:"money-icon",
               title:"More savings means higher rates",
               description:"The more you save with us, the higher your interest rate will be!"
@@ -32,7 +32,7 @@ const Home = () => {
             />
             <Feature 
             state={{
-              source:"/static/media/icon-security.1c819fa1007a5c53e6a9.png",
+              source:require("../img/icon-security.png"),
               alt:"security-icon",
               title:"Security you can trust",
               description:"We use top of the line encryption to make sure your data and money is always safe."
