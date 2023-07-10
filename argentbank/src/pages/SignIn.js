@@ -10,11 +10,11 @@ const SignIn = () => {
           <h1>Sign In</h1>
             <div className="input-wrapper">
               <label htmlFor="username">Username</label>
-              <input type="text" id="username" />
+              <input type="text" id="username" autoComplete="Username"/>
             </div>
             <div className="input-wrapper">
               <label htmlFor="password">Password</label>
-              <input type="password" id="password" />
+              <input type="password" id="password" autoComplete="off"/>
             </div>
             <div className="input-remember">
               <input type="checkbox" id="remember-me" />
