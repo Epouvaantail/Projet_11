@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "../components/button";
+import Account from "../components/account";
 
 const User = () => {
   return (
@@ -9,48 +9,24 @@ const User = () => {
         <button className="edit-button">Edit Name</button>
       </div>
       <h2 className="sr-only">Accounts</h2>
-      <section className="account">
-        <div className="account-content-wrapper">
-          <h3 className="account-title">Argent Bank Checking (x8349)</h3>
-          <p className="account-amount">$2,082.79</p>
-          <p className="account-amount-description">Available Balance</p>
-        </div>
-        <div className="account-content-wrapper cta">
-          <Button 
-          state={{
-            title:"View transactions"
-          }}
-          />
-        </div>
-      </section>
-      <section className="account">
-        <div className="account-content-wrapper">
-          <h3 className="account-title">Argent Bank Savings (x6712)</h3>
-          <p className="account-amount">$10,928.42</p>
-          <p className="account-amount-description">Available Balance</p>
-        </div>
-        <div className="account-content-wrapper cta">
-        <Button 
-          state={{
-            title:"View transactions"
-          }}
-          />
-        </div>
-      </section>
-      <section className="account">
-        <div className="account-content-wrapper">
-          <h3 className="account-title">Argent Bank Credit Card (x8349)</h3>
-          <p className="account-amount">$184.30</p>
-          <p className="account-amount-description">Current Balance</p>
-        </div>
-        <div className="account-content-wrapper cta">
-        <Button 
-          state={{
-            title:"View transactions"
-          }}
-          />
-        </div>
-      </section>
+      <Account 
+      state={{
+        title: "Argent Bank Checking (x8349)",
+        amount: "$2,082.79",
+        description:"Available Balance"
+      }}/>
+      <Account 
+      state={{
+        title: "Argent Bank Savings (x6712)",
+        amount: "$10,928.42",
+        description:"Available Balance"
+      }}/>
+      <Account 
+      state={{
+        title: "Argent Bank Credit Card (x8349)",
+        amount: "$184.30",
+        description:"Current Balancee"
+      }}/>
     </main>
   );
 };
