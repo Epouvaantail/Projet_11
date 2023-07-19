@@ -1,12 +1,14 @@
 import React from "react";
 import { useState } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
-// import {useDispatch, useSelector } from "react-redux"
+import { useNavigate } from "react-router-dom";
+import { useSelector,useDispatch } from "react-redux"
+import { setLog } from "../redux/logSlice";
 // import { NavLink } from "react-router-dom";
 
 const SignIn = () => {
-
+  const token = useSelector((state)=>state.SignIn)
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const [email, setEmail] = useState(""); 
   const [password, setPassword] = useState("");
@@ -43,14 +45,15 @@ const SignIn = () => {
       })
       .then(data => {
           sessionStorage.setItem('token', data.token);
-          navigate("/user")
+          // console.log(data.body.token);
+          const grabToken = data.body.token
+          dispatch(setLog({grabToken}));
+          navigate("/user");
       })
       .catch(error => {
           console.error(error);
       });
   };
-
-  // const token = useSelector((state) => state.auth.token);
   
   return (
     <main className="main bg-dark">
