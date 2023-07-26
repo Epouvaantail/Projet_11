@@ -1,23 +1,21 @@
 import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useSelector,useDispatch } from "react-redux"
-import { setLog } from "../redux/logSlice";
-// import { NavLink } from "react-router-dom";
+import { useDispatch } from "react-redux"
+import { saveToken } from "../redux/store";
 
 const SignIn = () => {
-  const token = useSelector((state)=>state.SignIn)
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const [email, setEmail] = useState(""); 
   const [password, setPassword] = useState("");
 
-  // on récupère la valeurs inscrite dans l'email
+  // on récupère la valeurs inscrite dans la case l'email
   const changeEmail = (event) => {
     setEmail(event.target.value)
   };
-  // on récupère la valeurs inscrite dans le mot de passe
+  // on récupère la valeurs inscrite dans la case mot de passe
   const changePassword = (event) => {
     setPassword(event.target.value)
   };
@@ -47,7 +45,7 @@ const SignIn = () => {
           sessionStorage.setItem('token', data.token);
           // console.log(data.body.token);
           const grabToken = data.body.token
-          dispatch(setLog({grabToken}));
+          dispatch(saveToken({grabToken}));
           navigate("/user");
       })
       .catch(error => {
@@ -73,14 +71,12 @@ const SignIn = () => {
               <input type="checkbox" id="remember-me" />
               <label htmlFor="remember-me">Remember me</label>
             </div>
-            {/* <NavLink to="/user"> */}
               <button 
                 className="sign-in-button"
                 type="submit"
                 >
                 Sign In
               </button>
-            {/* </NavLink> */}
         </form>
       </section>
     </main>
