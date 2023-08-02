@@ -2,23 +2,17 @@ import React from "react";
 import "../App.css";
 import { NavLink, useNavigate } from "react-router-dom";
 import logo from "../img/argentBankLogo.png";
-import { useSelector, useDispatch } from "react-redux";
-import { deleteToken } from "../redux/store";
-import { saveProfile } from "../redux/store";
+import { useSelector} from "react-redux";
 
 const Header = () => {
 
   const navigate = useNavigate();
-    const dispatch = useDispatch();
-    const token = useSelector((state) => state.token);
-    const username = saveProfile()
-    console.log(username)
+  const username = useSelector((state) => state.user.userName);
+    const token = localStorage.getItem("token");
     const handleSignOut = () => {
         localStorage.removeItem("token");
-        dispatch(deleteToken());
         navigate("/");
     };
-
   return (
     <header className="nav__container">
       <nav className="main-nav">
@@ -33,10 +27,10 @@ const Header = () => {
       <div>
         {token ? (
           <div>
-            <NavLink to={"/user"}>
+            <NavLink to={"/profile"}>
               <div className="main-nav-item" href="../img/logo_profil.png">
                 <i className="fa fa-user-circle"></i>
-                  Tony
+                  {username}
               </div>
             </NavLink>
             <NavLink className="main-nav-item" onClick={handleSignOut} to={"/"}>
@@ -45,7 +39,7 @@ const Header = () => {
             </NavLink>
           </div>
         ) : (
-          <NavLink className="main-nav-item" to="/signin">
+          <NavLink className="main-nav-item" to="/login">
             <i className="fa fa-user-circle"></i>
             Sign In
           </NavLink>
