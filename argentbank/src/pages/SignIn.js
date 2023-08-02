@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux"
-import { saveToken } from "../redux/store";
+import { login } from "../redux/loginSlice";
 
 const SignIn = () => {
   const navigate = useNavigate();
@@ -36,17 +36,14 @@ const SignIn = () => {
    .then(response => {
     console.log(response)
           if(!response.ok) {
-              // document.querySelector(".error").style.display = "inline"
               throw new Error('Identifiants incorrects');
           }
           return response.json();
       })
       .then(data => {
-          sessionStorage.setItem('token', data.token);
+          dispatch(login(data.body.token));
           // console.log(data.body.token);
-          const grabToken = data.body.token
-          dispatch(saveToken({grabToken}));
-          navigate("/user");
+          navigate("/profile");
       })
       .catch(error => {
           console.error(error);
@@ -61,7 +58,7 @@ const SignIn = () => {
           <h1>Sign In</h1>
             <div className="input-wrapper">
               <label htmlFor="Email">Email</label>
-              <input onChange={changeEmail}value={email} type="Email" id="Email" autoComplete="Email" placeholder="Email"/>
+              <input onChange={changeEmail} value={email} type="Email" id="Email" autoComplete="Email" placeholder="Email"/>
             </div>
             <div className="input-wrapper">
               <label htmlFor="password">Password</label>
