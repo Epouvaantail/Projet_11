@@ -22,7 +22,6 @@ const userSlice = createSlice({
         console.log(state.lastName)
         state.userName = action.payload.userName;
         console.log(state.userName)
-        state.userNameAfterChange = action.payload.userNameAfterChange
         },
         resetProfile: (state) => {
             state.id = null;
