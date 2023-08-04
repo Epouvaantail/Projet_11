@@ -16,6 +16,7 @@ const User = () => {
     navigate("/")
   }
 
+  // fetch pour récupérer les données utilisateurs
 useEffect(() => {
   async function fetchData() {
     const response = await fetch("http://localhost:3001/api/v1/user/profile", {
@@ -30,8 +31,9 @@ useEffect(() => {
   }
   fetchData();
 }, [dispatch, token]);
-  const [isEdit, setIsEdit] = useState(false);
 
+// formulaire d'édition du pseudo, ouverture/fermeture
+  const [isEdit, setIsEdit] = useState(false);
      const handleEdit = () => {
        setIsEdit(!isEdit);
      };
@@ -42,6 +44,7 @@ useEffect(() => {
     setUserName(event.target.value);
   };
 
+  // envoie du formulaire de modification du pseudo
   async function fetchUserName(event) {
     event.preventDefault();
     const fetchData = {
@@ -50,7 +53,7 @@ useEffect(() => {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
-      body: JSON.stringify({ userName: userName}),
+      body: JSON.stringify({ userName: userName }),
     };
 
     const response = await fetch(
@@ -64,7 +67,8 @@ useEffect(() => {
 
     const data = await response.json();
     console.log(data);
-    dispatch(setUserName(data.body.userName));
+    // window.location.reload();
+    dispatch(setProfile(data.body));
     handleEdit()
   }
 
