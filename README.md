@@ -28,9 +28,12 @@ mongo --version
 1. Open a terminal window in the cloned project
 1. Run the following commands:
 
-```bash
+```bash (cmd)
 # Install dependencies
 npm install
+
+# Switch to node 12.12 version
+nvs use 12.12
 
 # Start local dev server
 npm run dev:server
