@@ -4,7 +4,6 @@ const initialState = {
   id: null,
   email: null,
   userName: null,
-  userNameAfterChange:null
 };
 
 const userSlice = createSlice({
