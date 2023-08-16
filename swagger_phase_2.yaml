@@ -119,6 +119,11 @@ paths:
         '500':
           description: Internal Server Error
     delete:
+      security:
+        - Bearer: []
+      tags:
+        - User Module
+      summary: User Transaction API
       description: Delete user
       parameters:
           - in: header
