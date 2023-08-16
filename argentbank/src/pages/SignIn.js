@@ -46,6 +46,7 @@ const SignIn = () => {
           navigate("/profile");
       })
       .catch(error => {
+        alert("identifiants incorrects")
           console.error(error);
       });
   };
