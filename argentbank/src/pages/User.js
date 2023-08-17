@@ -16,7 +16,7 @@ const User = () => {
     navigate("/")
   }
 
-  // fetch pour récupérer les données utilisateurs
+// fetch pour récupérer les données utilisateurs
 useEffect(() => {
   async function fetchData() {
     const response = await fetch("http://localhost:3001/api/v1/user/profile", {
